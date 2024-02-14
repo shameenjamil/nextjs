@@ -4,7 +4,9 @@ import { getPosts } from "@/lib/data";
 
 // FETCH DATA WITH AN API
 const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/blog", {next:{revalidate:3600}});
+  const authUrl = process.env.AUTH_URL; // Access AUTH_URL from environment variables
+  // const res = await fetch(`${authUrl}/api/blog/${slug}`);
+  const res = await fetch(`${authUrl}/api/blog", {next:{revalidate:3600}}`);
 
   if (!res.ok) {
     throw new Error("Something went wrong");
