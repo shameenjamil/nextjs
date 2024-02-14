@@ -6,7 +6,7 @@ import { getPost } from "@/lib/data";
 
 // FETCH DATA WITH AN API
 const getData = async (slug) => {
-  const authUrl = process.env.AUTH_URL; // Access AUTH_URL from environment variables
+ const authUrl = process.env.AUTH_URL; // Access AUTH_URL from environment variables
   const res = await fetch(`${authUrl}/api/blog/${slug}`);
 
   if (!res.ok) {
